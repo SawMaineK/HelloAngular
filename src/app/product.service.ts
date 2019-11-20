@@ -18,6 +18,6 @@ export class ProductService {
 
   // Getting a product by id;
   getProduct(id: any): any {
-    return this.products[id];
+    return this.products.filter(x=>x.id == id)[0];
   }
 }
