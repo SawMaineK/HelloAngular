@@ -6,17 +6,18 @@ import { products } from './products';
 })
 export class ProductService {
 
-  products: any = [];
+  products: any[] = [];
   constructor() {
     this.products = products;
   }
 
+  // Getting all product;
   getProducts(): any[] {
     return this.products;
   }
 
+  // Getting a product by id;
   getProduct(id: any): any {
-
     return this.products[id];
   }
 }

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
-import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { ProductService } from './product.service';
     AppRoutingModule,
   ],
   providers: [
-    ProductService
   ],
   bootstrap: [AppComponent]
 })
