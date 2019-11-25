@@ -5,4 +5,11 @@
         <button>BUY NOW</button>
         <hr>
     </div>
+    <h2>Latest News</h2>
+    <div class="product" *ngFor="let news of newses" [routerLink]="[ '/news', news.id ]">
+        <h2>Title: {{news.message}}</h2>
+        <p>Desc: {{news.description}}</p>
+        <button>View Detail</button>
+        <hr>
+    </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { CartService } from '../cart.service';
+import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,14 +11,23 @@ import { CartService } from '../cart.service';
 export class HomePageComponent implements OnInit {
 
   products: any[] = [];
+  newses: any[] = [];
 
   constructor(
+    private newsService: NewsService,
     private productService: ProductService,
     private cartService: CartService
   ) { }
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe(results => {
+      this.products = results;
+    });
+
+    this.newsService.getNews()
+        .subscribe(results => {
+          this.newses = results;
+        });
 
     let items = this.cartService.getCartItems();
     console.log(items);
